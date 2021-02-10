@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { Home, About, Manual, Univ, Posts } from 'pages';
+import { Home, About, Manual, Univs, Posts } from 'pages';
 import Menu from 'components/Menu';
 
 class App extends Component {
@@ -10,7 +10,7 @@ class App extends Component {
                 <Menu/>
                 <Route exact path="/" component={Home} />
                 <Route exact path="/manual" component={Manual} />
-                <Route exact path="/univ" component={Univ} />
+                <Route exact path="/univ" component={Univs} />
 
                 {/* Coming Soon With Gallery?
                 <Switch>
