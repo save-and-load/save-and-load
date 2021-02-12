@@ -30,7 +30,9 @@ const Univs = () => {
                     />
                 )}
             </div>
-            <UnivFactory />
+            {/*
+                <UnivFactory />
+            */}
         </div>
     );
 };

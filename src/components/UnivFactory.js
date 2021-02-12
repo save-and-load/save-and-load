@@ -15,11 +15,11 @@ const UnivFactory = () => {
         setEditing(false);
         const univObj = {
             id: name,
-            main: null,
+            main: "",
             pass: [],
             pre: [],
         }
-        await dbService.collection("univ").add(univObj);
+        await dbService.collection("univ").doc(name).set(univObj);
         setName("");
     }
 
@@ -44,10 +44,10 @@ const UnivFactory = () => {
                                    placeholder="이름을 입력해주세요."
                             />
                         </form>
-                        <span onClick={toggleEditing}>취소</span>
+                        <button onClick={toggleEditing}>취소</button>
                     </>
                 ) : (
-                    <span onClick={toggleEditing}>추가하기</span>
+                    <button onClick={toggleEditing}>추가하기</button>
                 )
             }
         </>
