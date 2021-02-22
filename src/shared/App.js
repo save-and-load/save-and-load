@@ -1,23 +1,17 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
-import { Home, About, Manual, Univs, Posts } from 'pages';
+import { Route } from 'react-router-dom';
+import { Home, Manual, Univs, Log } from 'pages';
 import Menu from 'components/Menu';
 
 class App extends Component {
     render() {
         return (
             <div>
-                <Menu/>
+                <Menu />
                 <Route exact path="/" component={Home} />
                 <Route exact path="/manual" component={Manual} />
                 <Route exact path="/univ" component={Univs} />
-
-                {/* Coming Soon With Gallery?
-                <Switch>
-                    <Route path="/about/:name" component={About}/>
-                    <Route path="/about" component={About}/>
-                </Switch>
-                */}
+                <Route exact path="/log" component={Log} />
             </div>
         );
     }
