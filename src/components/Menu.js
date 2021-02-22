@@ -1,5 +1,6 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import { Nav, Navbar } from 'react-bootstrap';
 
 const Menu = () => {
     const activeStyle = {
@@ -9,6 +10,14 @@ const Menu = () => {
 
     return (
         <div>
+            <Navbar bg="dark" variant="dark">
+                <Navbar.Brand href="#home">Save & Load</Navbar.Brand>
+                <Nav className="mr-auto">
+                    <Nav.Link as={NavLink} exact to="/">메인</Nav.Link>
+                    <Nav.Link as={NavLink} exact to="/manual">법전</Nav.Link>
+                    <Nav.Link as={NavLink} exact to="/univ">대학 확인</Nav.Link>
+                </Nav>
+            </Navbar>
             <ul>
                 <li><NavLink exact to="/" activeStyle={activeStyle}>메인화면</NavLink></li>
                 <li><NavLink exact to="/manual" activeStyle={activeStyle}>법전/가이드북</NavLink></li>
@@ -22,6 +31,7 @@ const Menu = () => {
             </ul>
             <hr/>
         </div>
+
     );
 };
 
